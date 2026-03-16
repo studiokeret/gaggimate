@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "GaggiMate",
+    "slug": "gaggimate-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "../web/public/gm.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "eu.gaggimate.mobile",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "GaggiMate needs Bluetooth to communicate with your espresso machine.",
+        "NSBluetoothPeripheralUsageDescription": "GaggiMate needs Bluetooth to communicate with your espresso machine."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "../web/public/gm.png",
+        "backgroundColor": "#0A1120"
+      },
+      "package": "eu.gaggimate.mobile",
+      "permissions": [
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "modes": ["central"]
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 23
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ]
+    ]
+  }
+}
